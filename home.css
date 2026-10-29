@@ -1,0 +1,69 @@
+/* ==========================================================================
+   home.css: extra styles for the home page only (added October 26, 2026)
+   Loaded after styles.css, so it uses the same colors and fonts.
+   ========================================================================== */
+
+
+/* Hero: text on the left, portrait on the right ------------------------- */
+
+.hero-split {
+  display: grid; align-items: center; gap: 40px 64px;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+}
+.hero-split > * + * { margin-top: 0; }   /* undo the stacked spacing from styles.css */
+.hero-text > * + * { margin-top: 28px; }
+
+.hero-photo { margin: 0; }
+.hero-photo img {
+  display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover;
+  border: 1px solid var(--rule); border-radius: 3px; background: var(--surface);
+}
+
+
+/* Four lanes: the guide to the different kinds of work ------------------ */
+
+.lanes-intro { max-width: 680px; margin-bottom: 28px; font-size: 19px; line-height: 1.55; }
+
+.lanes {
+  display: grid; gap: 24px; padding: 0; list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+}
+.lane {
+  position: relative; display: flex; flex-direction: column; gap: 12px; padding: 28px 24px 24px;
+  background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--accent); border-radius: 0;
+}
+.lane svg { width: 36px; height: 36px; color: var(--accent); }
+.lane-num { position: absolute; top: 20px; right: 22px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; color: var(--muted); }
+.lane h3 { font-size: 20px; line-height: 1.3; }
+.lane p { font-size: 16px; line-height: 1.55; }
+.lane .text-link, .lane .tag { margin-top: auto; align-self: flex-start; }
+.lane .tag { margin-bottom: 10px; }
+
+
+/* The old headline, now the tagline of the first case study ------------- */
+
+.card .card-tagline { font-family: var(--serif); font-size: 21px; font-style: italic; line-height: 1.45; color: var(--accent-dark); }
+
+
+/* Book covers on the test-items card, and its two links ----------------- */
+
+.card-img { display: block; width: calc(100% + 56px); max-width: none; height: auto; margin: -28px -28px 6px; border-bottom: 1px solid var(--rule); }
+.card-links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 0 24px; }
+
+/* Waveform panel on the dialect card, the same size as the book covers */
+.card-thumb {
+  display: flex; flex-direction: column; justify-content: center; gap: 18px;
+  aspect-ratio: 1200 / 875; margin: -28px -28px 6px; padding: 28px 36px;
+  background: var(--tint); border-bottom: 1px solid var(--rule);
+}
+.card-thumb .wave { height: 45%; gap: 5px; }
+.card-thumb .wave span { max-width: none; }
+.thumb-label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-align: center; }
+
+
+/* Phones and narrow tablets ---------------------------------------------- */
+
+@media (max-width: 760px) {
+  .hero-split { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .hero-photo { order: -1; width: 160px; }   /* small portrait above the headline */
+}

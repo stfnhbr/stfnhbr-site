@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transcribing Dialect Speech as It Is Actually Spoken | Stefan Huber</title>
+  <meta name="description" content="Case study: four recordings in Upper Swabian, Standard German, and English, with a verbatim, annotated dialect transcript.">
+  <link rel="canonical" href="https://stfnhbr.online/work/dialect-audio/dialect-audio-case-study.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stefan Huber">
+  <meta property="og:title" content="Transcribing Dialect Speech as It Is Actually Spoken | Stefan Huber">
+  <meta property="og:description" content="Case study: four recordings in Upper Swabian, Standard German, and English, with a verbatim, annotated dialect transcript.">
+  <meta property="og:url" content="https://stfnhbr.online/work/dialect-audio/dialect-audio-case-study.html">
+  <meta property="og:image" content="https://stfnhbr.online/social-card-3.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="Stefan Huber, Ph.D.: Careful judgment, made repeatable. Linguist in AI evaluation.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
+<link rel="stylesheet" href="https://stfnhbr.online/styles.css?v=2026-10-26c">
+  <link rel="stylesheet" href="/nav.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    /* Conventions list: the labels are dialect forms and symbols, so they keep their
+       case and match the first column of the Dialect Features table. */
+    .rows.conv dt { font-family: var(--sans); font-size: 15px; font-weight: 400; line-height: 1.6;
+                    letter-spacing: 0; text-transform: none; color: var(--ink); }
+  </style>
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="/">Stefan Huber</a>
+      <nav class="site-nav" aria-label="Main">
+        <div class="nav-item has-sub">
+          <a href="/work/work-overview.html" aria-current="page">Work</a>
+          <div class="submenu">
+            <a href="/work/work-overview.html"><span class="sub-kicker">Overview</span>All work</a>
+            <span class="sub-rule" aria-hidden="true"></span>
+            <a href="/work/rubric/rubric-case-study.html"><span class="sub-kicker">01 &middot; Define quality</span>From guideline to rubric</a>
+            <a href="/work/test-items/test-items-case-study.html"><span class="sub-kicker">02 &middot; Test precisely</span>Test items with one answer</a>
+            <a href="/work/dialect-audio/dialect-audio-case-study.html" class="current"><span class="sub-kicker">03 &middot; Listen closely</span>Dialect speech, transcribed</a>
+            <a href="/work/crosstalk/crosstalk-case-study.html"><span class="sub-kicker">04 &middot; Build tools</span>Crosstalk <span class="sub-tag">Coming soon</span></a>
+          </div>
+        </div>
+        <a href="/about/about.html">About</a>
+        <a href="/resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-title">
+      <a class="back" href="/work/work-overview.html">&larr; All work</a>
+      <div class="card-meta">
+        <div class="label">Case study</div>
+      </div>
+      <h1>Transcribing Dialect Speech as It Is Actually Spoken</h1>
+    </div>
+
+    <div class="wrap layout">
+
+      <nav class="toc" aria-label="On this page">
+        <div class="label">On this page</div>
+        <ol>
+          <li><a href="#problem">The Problem</a></li>
+          <li><a href="#method">What I Did</a></li>
+          <li><a href="#recordings">The Recordings</a></li>
+          <li><a href="#transcript">The Annotated Transcript</a>
+            <ol>
+              <li><a href="#features">Dialect Features</a></li>
+              <li><a href="#conventions">Conventions</a></li>
+            </ol>
+          </li>
+          <li><a href="#result">The Result</a></li>
+        </ol>
+      </nav>
+
+      <article class="content">
+
+        <section id="problem" class="prose">
+          <h2>The Problem</h2>
+          <p>Dialect speech has no standard spelling, and few speakers produce a pure dialect. Most move along a scale between dialect and standard, sometimes within a single sentence, and more so when they know they are being recorded.</p>
+          <p>A transcriber who quietly &ldquo;corrects&rdquo; that speech, toward the dialect or toward the standard, erases the variation a speech model most needs to learn. The transcript then describes how the speaker is supposed to sound, not how he actually sounds.</p>
+        </section>
+
+        <section id="method" class="prose">
+          <h2>What I Did</h2>
+          <p>I am a native speaker of both Upper Swabian and Standard German, so I can hear where my own speech moves between the two. I recorded myself telling the same short story twice: once spontaneously in Upper Swabian, the dialect of my hometown, Biberach an der Ri&szlig;, and once in Standard German, read from a text. I added two free-speech samples, one in Standard German and one in English.</p>
+          <p>I then transcribed the Swabian recording verbatim. Each line has the Swabian as spoken, a Standard German rendering, and an English translation. I annotated the dialect features with line references and wrote down the conventions, so that another annotator could apply them the same way. I used AI assistance (Claude) to lay out the transcript and draft the feature table.</p>
+          <p>I kept the transcript readable rather than phonetic. It uses spelling based on Standard German, with only a few added marks where standard spelling would hide a real difference: <i lang="swg">å̃</i> for the dark nasalized Upper Swabian <i>a</i>, <i lang="swg">&auml;a</i>, <i lang="swg">ua</i>, and <i lang="swg">ia</i> for falling diphthongs, and an apostrophe where a clitic joins its host. A phonetic transcription would be more precise, but diarization, speech recognition, and AI annotation work need text that is consistent, searchable, and quick to check against the audio.</p>
+          <p>The four recordings are matched in loudness so they can be compared side by side.</p>
+        </section>
+
+        <section id="recordings" class="prose wide">
+          <h2>The Recordings</h2>
+
+          <h3 class="subhead"><span class="kicker">Pair 1</span> The Same Story in Two Varieties</h3>
+          <div class="players">
+            <div class="player">
+              <h4>Upper Swabian</h4>
+              <div class="meta"><span>Spontaneous</span><span>1:25</span></div>
+              <audio controls preload="metadata" src="https://stfnhbr.online/work/dialect-audio/audio/swabian-free.mp3">Your browser cannot play this recording.</audio>
+              <a class="text-link" href="#transcript">Read the annotated transcript &darr;</a>
+            </div>
+            <div class="player">
+              <h4>Standard German</h4>
+              <div class="meta"><span>Read aloud</span><span>1:16</span></div>
+              <audio controls preload="metadata" src="https://stfnhbr.online/work/dialect-audio/audio/standard-german-read.mp3">Your browser cannot play this recording.</audio>
+              <details class="reveal">
+                <summary>Show transcript</summary>
+                <ol class="seg reveal-body">
+                  <li><span lang="de">Meine Heimatstadt heißt Biberach an der Riß, und sie liegt ungefähr in der Mitte zwischen Ulm und Ravensburg, also gar nicht weit weg vom Bodensee.</span></li>
+                  <li><span lang="de">Das ist ein kleines Städtchen mit ungefähr dreißigtausend Einwohnern.</span></li>
+                  <li><span lang="de">Aber so genau weiß ich das gar nicht mehr. Ich bin schon viel zu lange von Biberach weg.</span></li>
+                  <li><span lang="de">Überhaupt hat sich so vieles verändert.</span></li>
+                  <li><span lang="de">Damals, in den Achtzigern, ging ich aufs Wieland-Gymnasium; das gibt es nach wie vor.</span></li>
+                  <li><span lang="de">Wir mussten damals neun Jahre aufs Gymnasium gehen und waren erst nach der dreizehnten Klasse fertig.</span></li>
+                  <li><span lang="de">Heutzutage ist das Schulsystem ganz anders:</span></li>
+                  <li><span lang="de">Die Schüler gehen nur noch acht Jahre aufs Gymnasium und können dann nach der zwölften Klasse das Abitur machen.</span></li>
+                  <li><span lang="de">Junge Männer wie ich mussten sich seinerzeit auch entscheiden, danach zum Bund zu gehen oder Zivildienst zu beantragen.</span></li>
+                  <li><span lang="de">Das gibt es heute nicht mehr, aber es ist möglich, dass es wieder eingeführt wird.</span></li>
+                  <li><span lang="de">Ich war schon lang nicht mehr in Biberach und ich weiß gar nicht, ob ich dort noch alles finden würde.</span></li>
+                  <li><span lang="de">Aber die Stadtpfarrkirche Sankt Martin existiert immer noch, und sie ist Biberachs Wahrzeichen geblieben.</span></li>
+                  <li><span lang="de">Sie ist eine besondere Kirche, wenn man sich ihre Geschichte anschaut, denn sie war eine der ersten Kirchen, in der sowohl katholische als auch evangelische Gottesdienste gehalten wurden.</span></li>
+                  <li><span lang="de">Aber heute geht ja niemand mehr in die Kirche.</span></li>
+                </ol>
+              </details>
+            </div>
+          </div>
+
+          <h3 class="subhead"><span class="kicker">Pair 2</span> Spontaneous Speech</h3>
+          <div class="players">
+            <div class="player">
+              <h4>Standard German</h4>
+              <div class="meta"><span>Spontaneous</span><span>0:43</span></div>
+              <audio controls preload="metadata" src="https://stfnhbr.online/work/dialect-audio/audio/standard-german-free.mp3">Your browser cannot play this recording.</audio>
+              <details class="reveal">
+                <summary>Show transcript with translation</summary>
+                <ol class="seg reveal-body">
+                  <li><span><span lang="de">Jetzt fragen sich vielleicht einige, warum ich seinerzeit aus Biberach weggezogen bin.</span><span class="tr">Now some of you may be wondering why I moved away from Biberach back then.</span></span></li>
+                  <li><span><span lang="de">Nun, ich hab Zivildienst gemacht, und zwar in München.</span><span class="tr">Well, I did my civilian service, in Munich.</span></span></li>
+                  <li><span><span lang="de">Das war eine tolle Zeit und danach wollte ich studieren und habe in Tübingen angefangen.</span><span class="tr">That was a great time, and afterwards I wanted to go to university, and I started in Tübingen.</span></span></li>
+                  <li><span><span lang="de">Später hat es mich nach Schweden verschlagen, an die Universität in Lund in Südschweden.</span><span class="tr">Later I ended up in Sweden, at the university in Lund in southern Sweden.</span></span></li>
+                  <li><span><span lang="de">Dort habe ich Linguistik studiert und dann auch meinen Doktor in Linguistik gemacht.</span><span class="tr">There I studied linguistics and then also earned my doctorate in linguistics.</span></span></li>
+                  <li><span><span lang="de">Dann bin ich in die USA gezogen und war zunächst als Lehrender an der University of South Florida in Tampa tätig.</span><span class="tr">Then I moved to the US and first worked as an instructor at the University of South Florida in Tampa.</span></span></li>
+                  <li><span><span lang="de">Letztes Jahr bin ich nach Kalifornien gezogen.</span><span class="tr">Last year I moved to California.</span></span></li>
+                  <li><span><span lang="de">Ich unterrichte heute nicht mehr, sondern arbeite hauptsächlich im Bereich KI.</span><span class="tr">I no longer teach; today I work mainly in AI.</span></span></li>
+                </ol>
+              </details>
+            </div>
+            <div class="player">
+              <h4>English</h4>
+              <div class="meta"><span>Spontaneous</span><span>1:02</span></div>
+              <audio controls preload="metadata" src="https://stfnhbr.online/work/dialect-audio/audio/english-free.mp3">Your browser cannot play this recording.</audio>
+              <details class="reveal">
+                <summary>Show transcript</summary>
+                <ol class="seg reveal-body">
+                  <li><span lang="en">I grew up in Biberach, a small town in Upper Swabia, and Swabian was my first, truly native language.</span></li>
+                  <li><span lang="en">But I left Germany over 30 years ago, first for Sweden, then for the United States, and today I only occasionally speak the dialect, mostly with members of my family on the phone.</span></li>
+                  <li><span lang="en">When listening to my own recording, I notice that Standard German slips in sometimes.</span></li>
+                  <li><span lang="en">For instance, I say “und” where a Swabian would say “ond”, and I also keep the unstressed ending in a word like <i lang="de">Klasse</i>.</span></li>
+                  <li><span lang="en">The funny thing is, the harder I try to concentrate, the more standard comes in. But I guess this is normal.</span></li>
+                  <li><span lang="en">Most dialect speakers move on a scale between the dialect and the standard, especially when put on the spot, like for a recording.</span></li>
+                  <li><span lang="en">This is also the approach that I applied to the transcription.</span></li>
+                  <li><span lang="en">I transcribed what I actually said rather than what the purest form of the dialect may have sounded like.</span></li>
+                </ol>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section id="transcript" class="prose wide">
+          <h2>The Annotated Transcript</h2>
+          <dl class="rows">
+            <dt>Variety</dt>
+            <dd>Upper Swabian (Oberschw&auml;bisch), Biberach an der Ri&szlig;</dd>
+            <dt>Recording</dt>
+            <dd>Spontaneous monologue, edited to remove fillers and breaths. The transcript follows the edited recording.</dd>
+            <dt>Speaker</dt>
+            <dd>Stefan Huber, native speaker of Upper Swabian and Standard German, linguist. Recorded, transcribed, and annotated by the speaker.</dd>
+          </dl>
+          <p>My speech varies between Upper Swabian and forms closer to Standard German (for example <i lang="de">Klasse</i> and <i lang="de">Achtziger</i>). I transcribed every form as I produced it, without normalizing toward either variety.</p>
+          <div class="legend">
+            <span><strong>Bold</strong> = Swabian</span>
+            <span>Regular = Standard German</span>
+            <span><em>Italic</em> = English</span>
+          </div>
+          <ol class="lines">
+          <li id="l1"><span class="n">1</span><div><p class="sw" lang="swg">Mei Hoimetstadt hoißt Biberach an dr Riß, ond se ligt ogfähr en dr Midde zwischa Ulm ond Ravensburg, also gar it weit weg vom Bodasee.</p><p class="de" lang="de">Meine Heimatstadt heißt Biberach an der Riß, und sie liegt ungefähr in der Mitte zwischen Ulm und Ravensburg, also gar nicht weit weg vom Bodensee.</p><p class="en">My hometown is Biberach an der Riß, and it lies roughly halfway between Ulm and Ravensburg, so not far at all from Lake Constance.</p></div></li>
+          <li id="l2"><span class="n">2</span><div><p class="sw" lang="swg">Des isch a klois Städtle ond då̃ läabet ogfähr dreißigdausend Leit.</p><p class="de" lang="de">Das ist ein kleines Städtchen, und da leben ungefähr dreißigtausend Leute.</p><p class="en">It’s a small town, and about thirty thousand people live there.</p></div></li>
+          <li id="l3"><span class="n">3</span><div><p class="sw" lang="swg">Abr des woiß i gar it meh so genau.</p><p class="de" lang="de">Aber das weiß ich gar nicht mehr so genau.</p><p class="en">But I’m not really sure about that anymore.</p></div></li>
+          <li id="l4"><span class="n">4</span><div><p class="sw" lang="swg">I be scho viel z'lang von Biberach weg.</p><p class="de" lang="de">Ich bin schon viel zu lange von Biberach weg.</p><p class="en">I’ve been away from Biberach far too long.</p></div></li>
+          <li id="l5"><span class="n">5</span><div><p class="sw" lang="swg">S'isch iberhaupt so viel andersch worra.</p><p class="de" lang="de">Es ist überhaupt so viel anders geworden.</p><p class="en">So much has changed altogether.</p></div></li>
+          <li id="l6"><span class="n">6</span><div><p class="sw" lang="swg">Also, då̃mals, in de Achtziger, då̃ bene no aufs Wieland-Gimnasium ganga; ond des gibt's emmr no.</p><p class="de" lang="de">Also, damals, in den Achtzigern, da bin ich noch aufs Wieland-Gymnasium gegangen, und das gibt es immer noch.</p><p class="en">Back then, in the eighties, I went to the Wieland-Gymnasium, and it still exists.</p></div></li>
+          <li id="l7"><span class="n">7</span><div><p class="sw" lang="swg">Abr mir hant då̃mals neun Jå̃hr aufs Gimnasium messa ond waret dann ersch nå̃ch dr dreizehnta Klasse fertig.</p><p class="de" lang="de">Aber wir haben damals neun Jahre aufs Gymnasium <span class="impl">[gehen]</span> müssen und waren dann erst nach der dreizehnten Klasse fertig.</p><p class="en">But back then we had to attend the Gymnasium for nine years and didn’t finish until thirteenth grade.</p></div></li>
+          <li id="l8"><span class="n">8</span><div><p class="sw" lang="swg">Ond heit isch des Schualsischtem ganz andersch.</p><p class="de" lang="de">Und heute ist das Schulsystem ganz anders.</p><p class="en">And today the school system is completely different.</p></div></li>
+          <li id="l9"><span class="n">9</span><div><p class="sw" lang="swg">Also dia Schialer heit, dia ganget bloß no acht Jå̃hr aufs Gimnasium, ond dann kennet se nå̃ch dr zwölfta Klasse s'Abitur macha.</p><p class="de" lang="de">Also, die Schüler heute, die gehen bloß noch acht Jahre aufs Gymnasium, und dann können sie nach der zwölften Klasse das Abitur machen.</p><p class="en">Students today only spend eight years at the Gymnasium, and then they can take the Abitur after twelfth grade.</p></div></li>
+          <li id="l10"><span class="n">10</span><div><p class="sw" lang="swg">Ond jonge Kerle wie i, dia hant sich seinerzeit entscheida messa, ob se zom Bund ganget odr Zivildienscht beantraga wellet.</p><p class="de" lang="de">Und junge Kerle wie ich, die haben sich seinerzeit entscheiden müssen, ob sie zum Bund <span class="impl">[zur Bundeswehr]</span> gehen oder Zivildienst beantragen wollen.</p><p class="en">And young guys like me had to decide back then whether to join the army or apply for civilian service.</p></div></li>
+          <li id="l11"><span class="n">11</span><div><p class="sw" lang="swg">Des gibt's jetzt so heit nemme, abr s'isch meglich, dass des wiedr eigfiahrt wird.</p><p class="de" lang="de">Das gibt es heute so nicht mehr, aber es ist möglich, dass das wieder eingeführt wird.</p><p class="en">That doesn’t exist anymore, but it’s possible that it will be reintroduced.</p></div></li>
+          <li id="l12"><span class="n">12</span><div><p class="sw" lang="swg">I war au scho lang nemme en Biberach ond woiß gar it, obbe då̃ no alles fenda dät.</p><p class="de" lang="de">Ich war auch schon lange nicht mehr in Biberach und weiß gar nicht, ob ich da noch alles finden würde.</p><p class="en">I haven’t been back to Biberach in a long time either, and I don’t even know whether I’d still find my way around.</p></div></li>
+          <li id="l13"><span class="n">13</span><div><p class="sw" lang="swg">Abr es gibt jå̃ emmr no dia Stadtpfarrkirch Sankt Martin, ond dia isch emmr no s'Wå̃hrzoicha von Biberach.</p><p class="de" lang="de">Aber es gibt ja immer noch die Stadtpfarrkirche St. Martin, und die ist immer noch das Wahrzeichen von Biberach.</p><p class="en">But there’s still the parish church of St. Martin, and it’s still Biberach’s landmark.</p></div></li>
+          <li id="l14"><span class="n">14</span><div><p class="sw" lang="swg">Des isch a bsondra Kirch, wenn mã sich dia Gschicht drvo aguckt, weil des isch oina von de erschte Kircha gwea, wo's sowohl kadolische als au evangelische Gottesdienschte gäaba hå̃t.</p><p class="de" lang="de">Das ist eine besondere Kirche, wenn man sich ihre Geschichte anschaut, denn sie war eine der ersten Kirchen, in der es sowohl katholische als auch evangelische Gottesdienste gegeben hat.</p><p class="en">It’s a special church when you look at its history, because it was one of the first churches to hold both Catholic and Protestant services.</p></div></li>
+          <li id="l15"><span class="n">15</span><div><p class="sw" lang="swg">Des war då̃mals scho was Bsondres.</p><p class="de" lang="de">Das war damals schon etwas Besonderes.</p><p class="en">That was really something special back then.</p></div></li>
+          <li id="l16"><span class="n">16</span><div><p class="sw" lang="swg">Abr heit gå̃ht jå̃ gar koinr meh en d'Kirch.</p><p class="de" lang="de">Aber heute geht ja gar keiner mehr in die Kirche.</p><p class="en">But these days nobody goes to church anymore.</p></div></li>
+          </ol>
+
+          <h3 class="subhead" id="features"><span class="kicker">Annotation</span> Dialect Features</h3>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th scope="col">Feature</th><th scope="col">Examples</th><th scope="col" class="narrow">Lines</th></tr>
+              </thead>
+              <tbody>
+                <tr class="grp"><td colspan="3">Vowels</td></tr>
+                <tr><td>Middle High German long <i>&acirc;</i> &rarr; dark nasalized <i>å̃</i></td><td class="ex" lang="swg">då̃, då̃mals, Jå̃hr, nå̃ch, jå̃, hå̃t, gå̃ht, Wå̃hrzoicha</td><td>2, 6, 7, 9, 12&ndash;16</td></tr>
+                <tr><td>Higher nasalized <i>&atilde;</i> in a reduced form</td><td class="ex" lang="swg">m&atilde; &lsquo;man&rsquo;</td><td>14</td></tr>
+                <tr><td>Middle High German <i>ei</i> &rarr; <i>oi</i></td><td class="ex" lang="swg">Hoimet-, hoi&szlig;t, klois, woi&szlig;, Wå̃hrzoicha, oina, koinr</td><td>1&ndash;3, 12&ndash;14, 16</td></tr>
+                <tr><td>Middle High German <i>uo, &uuml;e</i> &rarr; falling diphthongs <i>ua, ia</i></td><td class="ex" lang="swg">Schualsischtem, Schialer, eigfiahrt</td><td>8, 9, 11</td></tr>
+                <tr><td>Unrounding (&uuml;, &ouml;, eu, y &rarr; i, e, ei, i)</td><td class="ex" lang="swg">iberhaupt, kennet, messa, meglich, Leit, heit, Gimnasium, -sischtem</td><td>2, 5&ndash;11, 16</td></tr>
+                <tr><td>Lowering of short <i>i, u</i> &rarr; <i>e, o</i></td><td class="ex" lang="swg">en, emmr, fenda, ond, jonge, zom</td><td>1, 2, 6&ndash;13, 16</td></tr>
+                <tr><td>Falling diphthong <i>&auml;a</i></td><td class="ex" lang="swg">l&auml;abet, g&auml;aba</td><td>2, 14</td></tr>
+                <tr class="grp"><td colspan="3">Consonants</td></tr>
+                <tr><td><i>s</i> &rarr; <i>sch</i> before <i>t</i> and after <i>r</i></td><td class="ex" lang="swg">isch, ersch, erschte, Zivildienscht, Gottesdienschte, andersch, -sischtem</td><td>2, 5, 7, 8, 10, 14</td></tr>
+                <tr><td>Lenition of <i>t</i> &rarr; <i>d</i></td><td class="ex" lang="swg">Midde, drei&szlig;igdausend, kadolische</td><td>1, 2, 14</td></tr>
+                <tr><td><i>n</i>-deletion; <i>n</i> restored before a vowel</td><td class="ex" lang="swg">I be scho (4) vs. bene (6); ogf&auml;hr, eigfiahrt, aguckt</td><td>1, 4, 6, 11, 14</td></tr>
+                <tr><td>Loss of final <i>ch</i></td><td class="ex" lang="swg">i &lsquo;ich&rsquo;, au &lsquo;auch&rsquo;</td><td>3, 4, 10, 12, 14</td></tr>
+                <tr class="grp"><td colspan="3">Morphology</td></tr>
+                <tr><td>Infinitive, participle, and plural <i>-en</i> &rarr; <i>-a</i></td><td class="ex" lang="swg">zwischa, Bodasee, macha, entscheida, fenda, ganga, worra, Kircha, g&auml;aba</td><td>1, 5, 6, 9, 10, 12, 14</td></tr>
+                <tr><td>Unified verbal plural <i>-et</i>; <i>hant</i></td><td class="ex" lang="swg">l&auml;abet, waret, ganget, kennet, wellet; mir hant, dia hant</td><td>2, 7, 9, 10</td></tr>
+                <tr><td>Participle prefix lost or reduced; <i>be-</i>, <i>ge-</i> syncope</td><td class="ex" lang="swg">ganga, worra; gwea, g&auml;aba; Gschicht, bsondra, Bsondres</td><td>5, 6, 14, 15</td></tr>
+                <tr><td>Diminutive <i>-le</i></td><td class="ex" lang="swg">St&auml;dtle</td><td>2</td></tr>
+                <tr><td>Negation: Upper Swabian <i>it</i> (Lower Swabian <i>net</i>); <i>nemme</i> &lsquo;no longer&rsquo;</td><td class="ex" lang="swg">gar it weit, gar it meh, gar it; nemme</td><td>1, 3, 11, 12</td></tr>
+                <tr class="grp"><td colspan="3">Clitics and weak forms</td></tr>
+                <tr><td><i>s'</i> (proclitic) and <i>'s</i> (enclitic) from <i>es</i>, <i>das</i></td><td class="ex" lang="swg">s'isch, s'Abitur, s'Wå̃hrzoicha; gibt's, wo's</td><td>5, 6, 9, 11, 13, 14</td></tr>
+                <tr><td><i>d'</i> from <i>die</i>; <i>z'</i> from <i>zu</i></td><td class="ex" lang="swg">en d'Kirch; z'lang</td><td>4, 16</td></tr>
+                <tr><td>Weak pronouns <i>se</i> &lsquo;sie&rsquo;, <i>m&atilde;</i> &lsquo;man&rsquo;; enclitic <i>-e</i> &lsquo;ich&rsquo;</td><td class="ex" lang="swg">se ligt, kennet se, ob se; wenn m&atilde;; bene = ben + e, obbe = ob + e (vs. stressed I, i)</td><td>1, 6, 9, 10, 12, 14</td></tr>
+                <tr><td>Reduced article <i>a</i> &lsquo;ein(e)&rsquo;</td><td class="ex" lang="swg">a klois St&auml;dtle, a bsondra Kirch</td><td>2, 14</td></tr>
+                <tr class="grp"><td colspan="3">Syntax</td></tr>
+                <tr><td>Infinitive for participle with a modal (IPP)</td><td class="ex" lang="swg">hant sich entscheida messa</td><td>10</td></tr>
+                <tr><td>Modal without a main verb</td><td class="ex" lang="swg">neun Jå̃hr aufs Gimnasium messa</td><td>7</td></tr>
+                <tr><td><i>tun</i>-subjunctive</td><td class="ex" lang="swg">obbe då̃ no alles fenda d&auml;t</td><td>12</td></tr>
+                <tr><td>Left dislocation with resumptive <i>dia</i></td><td class="ex" lang="swg">dia Schialer heit, dia ganget &hellip;; jonge Kerle wie i, dia hant &hellip;</td><td>9, 10</td></tr>
+                <tr><td><i>weil</i> with verb-second order</td><td class="ex" lang="swg">weil des isch oina &hellip; gwea</td><td>14</td></tr>
+                <tr><td>Relative particle <i>wo</i></td><td class="ex" lang="swg">Kircha &hellip;, wo's &hellip; g&auml;aba hå̃t</td><td>14</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="subhead" id="conventions"><span class="kicker">Annotation</span> Transcription Conventions</h3>
+          <dl class="rows conv">
+            <dt>Orthography</dt>
+            <dd>Spelling based on Standard German conventions, so it stays readable for German-speaking annotators and searchable in annotation tools. It is not a phonetic transcription: only the few marks below are added, where standard spelling would hide a real difference.</dd>
+            <dt>å̃</dt>
+            <dd>Dark (back) nasalized long <i>a</i> [&#593;&#771;&#720;], the reflex of Middle High German long <i>&acirc;</i> (<span lang="swg">då̃, Jå̃hr, nå̃ch, hå̃t</span>).</dd>
+            <dt>&atilde;</dt>
+            <dd>Higher, central nasalized <i>a</i> [&#592;&#771;] in reduced forms (<span lang="swg">m&atilde;</span>).</dd>
+            <dt>Unstressed -a</dt>
+            <dd>Where it stands for Standard German <i>-en</i> (<span lang="swg">macha, Kircha</span>), the vowel is nasalized. This is predictable, so it is not marked.</dd>
+            <dt>äa, ua, ia</dt>
+            <dd>Falling diphthongs [ɛɐ], [uɐ], [iɐ].</dd>
+            <dt>-r after a consonant</dt>
+            <dd>Reduced schwa plus <i>r</i>, written without <i>e</i> (<span lang="swg">abr, odr, dr, wiedr, koinr, emmr</span>).</dd>
+            <dt>' (apostrophe)</dt>
+            <dd>Marks the junction between a clitic and its host, on whichever side the host is: proclitic <i lang="swg">s'isch</i>, <i lang="swg">d'Kirch</i>, <i lang="swg">z'lang</i>; enclitic <i lang="swg">gibt's</i>, <i lang="swg">wo's</i>. Clitic and host form one prosodic word, so no space is written.</dd>
+            <dt>[ &hellip; ]</dt>
+            <dd>In the Standard German line: words implied but not spoken.</dd>
+          </dl>
+          <p class="footnote">Fillers and breaths were removed in editing; the transcript reflects the edited recording. The Standard German line is a close rendering; the English line is a free translation.</p>
+        </section>
+
+        <section id="result" class="prose">
+          <h2>The Result</h2>
+          <p>Four recordings, a sixteen-line verbatim transcript in three layers, and a feature annotation with line references. The transcript keeps the few places where my speech drifts toward the standard, and it stays readable enough for diarization and AI annotation work.</p>
+          <p>Coming next: a case study on <a href="/work/crosstalk/crosstalk-case-study.html">Crosstalk</a>, my own diarization and transcription app, which shows how I apply these considerations in a working tool.</p>
+          <dl class="rows skills">
+            <dt>Skills Shown</dt>
+            <dd>Verbatim transcription, dialect annotation, phonological and morphosyntactic analysis, transcription conventions, speech recording, German, Swabian, and English.</dd>
+          </dl>
+          <p class="footnote">All recordings are my own voice, recorded for this page. They are shared as work samples only and may not be reused or used to train or clone voices.</p>
+        </section>
+
+        <div class="next">
+          <a class="text-link" href="/work/crosstalk/crosstalk-case-study.html">Next: Crosstalk, a Tool for Reviewing Who Speaks When &rarr;</a>
+          <a class="text-link" href="/work/work-overview.html">All work</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-intro">
+          <div class="label">Contact</div>
+          <h2>Let&rsquo;s talk</h2>
+          <p>I&rsquo;m open to roles in AI evaluation, language quality, and assessment. Remote, from California.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="mailto:stfnhbr@gmail.com">stfnhbr@gmail.com <span>Email</span></a></li>
+          <li><a href="https://www.linkedin.com/in/stefan-huber-phd-29161b35/">LinkedIn profile <span>LinkedIn</span></a></li>
+          <li><a href="https://stfnhbr.online/resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute; <span>PDF</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stefan Huber</div>
+        <div>Built by hand in HTML and CSS, with AI assistance.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

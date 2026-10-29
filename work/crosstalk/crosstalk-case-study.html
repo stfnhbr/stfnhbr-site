@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crosstalk, coming soon | Stefan Huber</title>
+  <meta name="description" content="Crosstalk: Stefan Huber's own desktop tool for reviewing who speaks when in recorded conversations. Case study coming soon.">
+  <link rel="canonical" href="https://stfnhbr.online/work/crosstalk/crosstalk-case-study.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stefan Huber">
+  <meta property="og:title" content="Crosstalk, coming soon | Stefan Huber">
+  <meta property="og:description" content="Crosstalk: Stefan Huber&#x27;s own desktop tool for reviewing who speaks when in recorded conversations. Case study coming soon.">
+  <meta property="og:url" content="https://stfnhbr.online/work/crosstalk/crosstalk-case-study.html">
+  <meta property="og:image" content="https://stfnhbr.online/social-card-3.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="Stefan Huber, Ph.D.: Careful judgment, made repeatable. Linguist in AI evaluation.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="/nav.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    /* Drawing: two speakers on a timeline, with the overlap marked */
+    .turns { padding: 28px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; }
+    .turns-row { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 16px; }
+    .turns-row + .turns-row { margin-top: 14px; }
+    .turns-who { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .turns-track { position: relative; height: 26px; background: var(--ground); border: 1px solid var(--rule); }
+    .turns-track span { position: absolute; top: 3px; bottom: 3px; border-radius: 1px; }
+    .turns-a span { background: var(--accent); }
+    .turns-b span { background: #9FB0E3; }
+    .turns-track .overlap { top: -1px; bottom: -1px; background: none; border: 2px solid var(--note); }
+    .turns-axis { display: flex; justify-content: space-between; margin: 10px 0 0 112px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+    .turns-key { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 16px; font-family: var(--sans); font-size: 14px; color: var(--muted); }
+    .turns-key i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; }
+
+    /* Screenshot */
+    .shot { margin: 0; }
+    .shot img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 3px; background: #1B1F2A; }
+    .shot figcaption { max-width: 760px; margin-top: 12px; font-family: var(--sans); font-size: 14px; line-height: 1.5; color: var(--muted); }
+
+    /* Planned contents */
+    .plan { padding: 0; list-style: none; border-bottom: 1px solid var(--rule); counter-reset: plan; }
+    .plan li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 0 12px; padding: 16px 0; border-top: 1px solid var(--rule); counter-increment: plan; }
+    .plan li::before { content: counter(plan, decimal-leading-zero); font-family: var(--mono); font-size: 13px; line-height: 1.9; color: var(--accent); }
+    .plan strong { display: block; font-family: var(--sans); font-size: 17px; }
+    .plan span { font-size: 17px; line-height: 1.55; }
+
+    .ask { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; padding: 28px; background: var(--tint); border: 1px solid var(--rule); border-radius: 3px; }
+    .ask p { max-width: 560px; font-size: 18px; }
+
+    @media (max-width: 600px) {
+      .turns { padding: 20px; }
+      .turns-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+      .turns-axis { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="/">Stefan Huber</a>
+      <nav class="site-nav" aria-label="Main">
+        <div class="nav-item has-sub">
+          <a href="/work/work-overview.html" aria-current="page">Work</a>
+          <div class="submenu">
+            <a href="/work/work-overview.html"><span class="sub-kicker">Overview</span>All work</a>
+            <span class="sub-rule" aria-hidden="true"></span>
+            <a href="/work/rubric/rubric-case-study.html"><span class="sub-kicker">01 &middot; Define quality</span>From guideline to rubric</a>
+            <a href="/work/test-items/test-items-case-study.html"><span class="sub-kicker">02 &middot; Test precisely</span>Test items with one answer</a>
+            <a href="/work/dialect-audio/dialect-audio-case-study.html"><span class="sub-kicker">03 &middot; Listen closely</span>Dialect speech, transcribed</a>
+            <a href="/work/crosstalk/crosstalk-case-study.html" class="current"><span class="sub-kicker">04 &middot; Build tools</span>Crosstalk <span class="sub-tag">Coming soon</span></a>
+          </div>
+        </div>
+        <a href="/about/about.html">About</a>
+        <a href="/resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-title">
+      <a class="back" href="../../index.html#lanes">&larr; Four kinds of careful work</a>
+      <div class="card-meta">
+        <div class="label">Tool</div>
+        <span class="tag">Coming soon</span>
+      </div>
+      <h1>Crosstalk: A Tool for Reviewing Who Speaks When</h1>
+    </div>
+
+    <div class="wrap page-body">
+
+      <p class="page-intro">When two people talk over each other, transcripts and speaker labels are where reviewers disagree most. Crosstalk is my own desktop app for exactly that moment: seeing every speaker turn on one timeline, so overlaps and handovers get checked instead of guessed.</p>
+
+      <section>
+        <h2>The problem it looks at</h2>
+        <div class="turns" role="img" aria-label="Drawing of two speakers on a 30-second timeline. Their turns overlap twice, and both overlaps are outlined.">
+          <div class="turns-row turns-a">
+            <div class="turns-who">Speaker A</div>
+            <div class="turns-track">
+              <span style="left: 2%; width: 30%;"></span>
+              <span style="left: 52%; width: 22%;"></span>
+              <span class="overlap" style="left: 26%; width: 6%;"></span>
+              <span class="overlap" style="left: 68%; width: 6%;"></span>
+            </div>
+          </div>
+          <div class="turns-row turns-b">
+            <div class="turns-who">Speaker B</div>
+            <div class="turns-track">
+              <span style="left: 26%; width: 24%;"></span>
+              <span style="left: 68%; width: 29%;"></span>
+              <span class="overlap" style="left: 26%; width: 6%;"></span>
+              <span class="overlap" style="left: 68%; width: 6%;"></span>
+            </div>
+          </div>
+          <div class="turns-axis" aria-hidden="true"><span>0:00</span><span>0:10</span><span>0:20</span><span>0:30</span></div>
+          <div class="turns-key" aria-hidden="true">
+            <span><i style="background: var(--accent);"></i>Speaker A</span>
+            <span><i style="background: #9FB0E3;"></i>Speaker B</span>
+            <span><i style="border: 2px solid var(--note);"></i>Crosstalk: both speak at once</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>A first look</h2>
+        <figure class="shot">
+          <a href="crosstalk-screenshot.jpg" target="_blank" rel="noopener"><img src="crosstalk-screenshot.jpg" width="1600" height="860" loading="lazy" alt="Screenshot of Crosstalk: a debate video with two speaker badges showing at once, a speakers panel with turn and overlap counts, a color-coded transcript, a timeline with waveform, spectrogram and one lane per speaker, and an inspector for editing a single word's start and end time."></a>
+          <figcaption>Early build, October 2026, on a Swedish party-leader debate with twelve speakers. At this moment two speakers talk at once, and both badges show on the video. Each speaker gets a lane under the waveform and spectrogram, the speakers panel counts turns and seconds of overlap, uncertain words are flagged in the transcript, and the inspector retimes a single word to the millisecond.<br>Video: <a href="https://www.youtube.com/watch?v=9AWmJUkeoxo" target="_blank" rel="noopener">&ldquo;Sammanfattning av Agendas partiledardebatt 6/5-2018&rdquo;</a> by <a href="https://www.youtube.com/@LuddeThl" target="_blank" rel="noopener">Lu (@LuddeThl)</a> on YouTube, licensed <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY</a>.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>What the case study will show</h2>
+        <ol class="plan">
+          <li><div><strong>The review problem</strong><span>Where speaker labels and turn boundaries go wrong, drawn from my work reviewing and auditing audio annotation.</span></div></li>
+          <li><div><strong>The tool, screen by screen</strong><span>A short recording of Crosstalk in use on openly licensed audio, with a walk-through of each panel.</span></div></li>
+          <li><div><strong>The design decisions</strong><span>What I chose to build first, what I left out, and why a reviewer would care.</span></div></li>
+          <li><div><strong>How I built it</strong><span>Planning and specifying the app myself, and building it with AI coding assistance.</span></div></li>
+        </ol>
+      </section>
+
+      <div class="ask">
+        <p>Want an early look before the case study is published? I&rsquo;m happy to walk you through the current version.</p>
+        <a class="button" href="mailto:stfnhbr@gmail.com?subject=Crosstalk%20preview">Ask for a preview</a>
+      </div>
+
+      <div class="next">
+        <a class="text-link" href="../dialect-audio/dialect-audio-case-study.html">&larr; Dialect audio</a>
+        <a class="text-link" href="../work-overview.html">All work &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-intro">
+          <div class="label">Contact</div>
+          <h2>Let&rsquo;s talk</h2>
+          <p>I&rsquo;m open to roles in AI evaluation, language quality, and assessment. Remote, from California.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="mailto:stfnhbr@gmail.com">stfnhbr@gmail.com <span>Email</span></a></li>
+          <li><a href="https://www.linkedin.com/in/stefan-huber-phd-29161b35/">LinkedIn profile <span>LinkedIn</span></a></li>
+          <li><a href="../../resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute; <span>PDF</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stefan Huber</div>
+        <div>Built by hand in HTML and CSS, with AI assistance.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

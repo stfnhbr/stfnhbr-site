@@ -1,0 +1,12 @@
+ErrorDocument 404 /404.html
+
+# Which file to show when someone visits a folder (stfnhbr.online/work/ and so on).
+# The site root keeps index.html; each subfolder uses its descriptive page name.
+DirectoryIndex index.html work-overview.html about.html rubric-case-study.html test-items-case-study.html dialect-audio-case-study.html crosstalk-case-study.html
+
+# Old page addresses send visitors to the renamed pages, so shared links never break.
+RedirectMatch 301 ^/work/index\.html$ /work/work-overview.html
+RedirectMatch 301 ^/about/index\.html$ /about/about.html
+RedirectMatch 301 ^/work/rubric/index\.html$ /work/rubric/rubric-case-study.html
+RedirectMatch 301 ^/work/test-items/index\.html$ /work/test-items/test-items-case-study.html
+RedirectMatch 301 ^/work/dialect-audio/index\.html$ /work/dialect-audio/dialect-audio-case-study.html

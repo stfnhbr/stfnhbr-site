@@ -1,0 +1,87 @@
+/* ==========================================================================
+   nav.css: the Work submenu in the header, and the Work overview page
+   (added October 27, 2026). Loaded after styles.css on every page.
+   ========================================================================== */
+
+
+/* IPA letters at the right size -------------------------------------------
+   Charis SIL draws å, combining marks and IPA symbols. Its lowercase letters
+   are a little shorter than Source Serif's and much shorter than Schibsted
+   Grotesk's, so it gets one size correction for serif text (102%) and a
+   larger one for sans-serif labels and tables (109%). These replace the
+   single "Charis IPA" setting (98.5%) in styles.css. */
+
+@font-face { font-family: "Charis IPA Serif"; font-weight: 400; font-style: normal; src: url("/fonts/charis-ipa-regular.woff2") format("woff2"); unicode-range: U+00E5, U+0250-036F; size-adjust: 102%; }
+@font-face { font-family: "Charis IPA Serif"; font-weight: 400; font-style: italic; src: url("/fonts/charis-ipa-italic.woff2") format("woff2"); unicode-range: U+00E5, U+0250-036F; size-adjust: 102%; }
+@font-face { font-family: "Charis IPA Serif"; font-weight: 600 700; font-style: normal; src: url("/fonts/charis-ipa-semibold.woff2") format("woff2"); unicode-range: U+00E5, U+0250-036F; size-adjust: 102%; }
+@font-face { font-family: "Charis IPA Serif"; font-weight: 600 700; font-style: italic; src: url("/fonts/charis-ipa-semibolditalic.woff2") format("woff2"); unicode-range: U+00E5, U+0250-036F; size-adjust: 102%; }
+@font-face { font-family: "Charis IPA Sans"; font-weight: 400; font-style: normal; src: url("/fonts/charis-ipa-regular.woff2") format("woff2"); unicode-range: U+00E5, U+0250-036F; size-adjust: 109%; }
+@font-face { font-family: "Charis IPA Sans"; font-weight: 400; font-style: italic; src: url("/fonts/charis-ipa-italic.woff2") format("woff2"); unicode-range: U+00E5, U+0250-036F; size-adjust: 109%; }
+@font-face { font-family: "Charis IPA Sans"; font-weight: 500 700; font-style: normal; src: url("/fonts/charis-ipa-semibold.woff2") format("woff2"); unicode-range: U+00E5, U+0250-036F; size-adjust: 109%; }
+@font-face { font-family: "Charis IPA Sans"; font-weight: 500 700; font-style: italic; src: url("/fonts/charis-ipa-semibolditalic.woff2") format("woff2"); unicode-range: U+00E5, U+0250-036F; size-adjust: 109%; }
+
+:root {
+  --sans: "Charis IPA Sans", "Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Charis IPA Serif", "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+
+/* Work submenu ------------------------------------------------------------
+   Opens when the mouse rests on "Work" or when a keyboard user tabs into it.
+   On phones and tablets (no hover) it stays hidden, and tapping "Work" opens
+   the overview page, which lists the same four pages. */
+
+.nav-item { position: relative; display: flex; }
+
+.submenu {
+  display: none; position: absolute; top: 100%; left: -20px; z-index: 30;
+  width: 320px; padding: 8px;
+  background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--accent);
+  box-shadow: 0 14px 30px rgba(23, 32, 29, 0.14);
+}
+.site-nav .submenu a {
+  display: block; min-height: 0; padding: 10px 12px; border-radius: 2px;
+  font-family: var(--sans); font-size: 16px; font-weight: 600; line-height: 1.3;
+  color: var(--ink); text-decoration: none;
+}
+.site-nav .submenu a:hover,
+.site-nav .submenu a:focus-visible { background: var(--tint); color: var(--accent); outline-offset: -2px; }
+.site-nav .submenu a.current { color: var(--accent); }
+
+.sub-kicker {
+  display: block; margin-bottom: 2px;
+  font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.sub-rule { display: block; height: 1px; margin: 6px 12px; background: var(--rule); }
+.sub-tag {
+  margin-left: 8px; padding: 1px 6px; border: 1px solid currentColor; vertical-align: 2px;
+  font-family: var(--mono); font-size: 10px; font-weight: 400; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--note);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .has-sub > a::after {
+    content: ""; display: inline-block; width: 6px; height: 6px; margin: -4px 0 0 9px;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+  }
+  .has-sub:hover .submenu,
+  .has-sub:focus-within .submenu { display: block; }
+}
+
+
+/* Work overview page ------------------------------------------------------
+   Every card's picture panel has the same shape, so the cards line up. */
+
+.work-card .thumb {
+  display: flex; flex-direction: column; justify-content: center; gap: 16px;
+  aspect-ratio: 1200 / 875;
+}
+.work-card .thumb-img { padding: 0; background: var(--surface); }
+.work-card .thumb-img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+.work-card .thumb .wave { height: 45%; gap: 5px; }
+.work-card .thumb .wave span { max-width: none; }
+.thumb-caption { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-align: center; }
+.work-card .lane-label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.work-links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 0 24px; }

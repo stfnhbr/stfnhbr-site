@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Vague Guideline to Consistent Rubric | Stefan Huber</title>
+  <meta name="description" content="Case study: one line of rating guidance turned into a guideline, a scored rubric, an edge-case map, and calibration examples.">
+  <link rel="canonical" href="https://stfnhbr.online/work/rubric/rubric-case-study.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stefan Huber">
+  <meta property="og:title" content="From Vague Guideline to Consistent Rubric | Stefan Huber">
+  <meta property="og:description" content="Case study: one line of rating guidance turned into a guideline, a scored rubric, an edge-case map, and calibration examples.">
+  <meta property="og:url" content="https://stfnhbr.online/work/rubric/rubric-case-study.html">
+  <meta property="og:image" content="https://stfnhbr.online/social-card-3.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="Stefan Huber, Ph.D.: Careful judgment, made repeatable. Linguist in AI evaluation.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="/nav.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="/">Stefan Huber</a>
+      <nav class="site-nav" aria-label="Main">
+        <div class="nav-item has-sub">
+          <a href="/work/work-overview.html" aria-current="page">Work</a>
+          <div class="submenu">
+            <a href="/work/work-overview.html"><span class="sub-kicker">Overview</span>All work</a>
+            <span class="sub-rule" aria-hidden="true"></span>
+            <a href="/work/rubric/rubric-case-study.html" class="current"><span class="sub-kicker">01 &middot; Define quality</span>From guideline to rubric</a>
+            <a href="/work/test-items/test-items-case-study.html"><span class="sub-kicker">02 &middot; Test precisely</span>Test items with one answer</a>
+            <a href="/work/dialect-audio/dialect-audio-case-study.html"><span class="sub-kicker">03 &middot; Listen closely</span>Dialect speech, transcribed</a>
+            <a href="/work/crosstalk/crosstalk-case-study.html"><span class="sub-kicker">04 &middot; Build tools</span>Crosstalk <span class="sub-tag">Coming soon</span></a>
+          </div>
+        </div>
+        <a href="/about/about.html">About</a>
+        <a href="/resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-title">
+      <a class="back" href="../work-overview.html">&larr; All work</a>
+      <div class="card-meta">
+        <div class="label">Case Study</div>
+      </div>
+      <h1>From Vague Guideline to Consistent Rubric</h1>
+    </div>
+
+    <div class="wrap layout">
+
+      <nav class="toc" aria-label="On this page">
+        <div class="label">On this page</div>
+        <ol>
+          <li><a href="#problem">The Problem</a></li>
+          <li><a href="#method">What I did</a></li>
+          <li><a href="#artifact">The Artifact</a>
+            <ol>
+              <li><a href="#part1">1. The Vague Starting Instruction</a></li>
+              <li><a href="#part2">2. Seven Examples That Split Raters</a></li>
+              <li><a href="#part3">3. The Guideline</a></li>
+              <li><a href="#part4">4. The Rubric</a></li>
+              <li><a href="#part5">5. The Edge-Case Map</a></li>
+              <li><a href="#part6">6. Calibration Examples</a></li>
+            </ol>
+          </li>
+          <li><a href="#result">The Result</a></li>
+        </ol>
+      </nav>
+
+      <article class="content">
+
+        <section id="problem" class="prose">
+          <h2>The Problem</h2>
+          <p>Raters often get one line of guidance: "Rate how well the response follows the user's instructions, from 1 (poor) to 5 (excellent)." It sounds clear until two careful raters score the same response. Does one example meet "no more than two examples"? Does a formal German email that slips once into the informal <em>du</em> lose one point or three? Does a perfectly formatted wrong answer follow instructions? The guidance doesn't say, so each rater decides privately, and the scores measure the raters as much as the responses.</p>
+        </section>
+
+        <section id="method" class="prose">
+          <h2>What I did</h2>
+          <p>I wrote seven invented requests and responses, each chosen to split raters under that one line. Each exposed a question the guidance left open. Is a number a target or a ceiling? How much does one missed instruction cost? Does accuracy count? When is a clarifying question acceptable?</p>
+          <p>I answered each question with a written decision, then built the decisions into a three-step guideline: list every instruction the request states, check each one against explicit rules, and read the score from a rubric. It is the same checklist method as the grid under the Rurik item in the <a href="../test-items/test-items-case-study.html">test-items case study</a>.</p>
+          <p>When I scored the seven examples against my first rubric, it broke in three places. A clarifying question fell between 1 and 2. Three responses that met one of two instructions fell between 2 and 3, because "most instructions missed" doesn't say whether one of two is most. A wrong answer scored 5. That was correct under my rule that accuracy is rated separately, but a reader would assume the rubric was broken. I fixed each gap: a counting rule, a test for when a question counts as doing the task, and a guideline that opens with what is not rated.</p>
+          <p>The hardest line to draw was around style. A German email that closes with <em>Viele Grüße</em> instead of <em>Mit freundlichen Grüßen</em> is a notch less formal, but no landlady would read it as rude. A single <em>du</em> breaks the register. The rule now separates the two. If the reader would see a lapse as breaking the register, the instruction counts as missed. A choice that is slightly less formal but still acceptable counts as a small flaw.</p>
+          <p>I added one check for people who write rubrics rather than apply them. A criterion can quietly disagree with the request it scores. If the request allows "at most two" and the criterion demands "exactly two," compliant responses lose points. Before a criterion is used, I classify how it relates to the request's constraint. It can be the same, narrower, broader, partly overlapping, or contradictory.</p>
+          <p>I built this case study with an AI assistant, which proposed examples and rule wordings. Every decision and ruling is mine.</p>
+        </section>
+
+        <section id="artifact" class="prose wide">
+          <h2>The Artifact</h2>
+          <p>Six parts, in the order I built them. Select a part to open it.</p>
+
+          <!-- Each part is a <details> element. Add the word "open" to show a part when the page loads. -->
+          <div class="parts">
+
+            <details class="part" id="part1" open>
+              <summary>
+                <span class="kicker">Part 1</span>
+                <span class="part-title">The Vague Starting Instruction</span>
+                <span class="part-desc">The one line of guidance raters often get.</span>
+              </summary>
+              <div class="part-body">
+                <blockquote class="quote">
+                  <p><em>Rate how well the response follows the user's instructions, from 1 (poor) to 5 (excellent).</em></p>
+                </blockquote>
+                <p>It leaves open how to weigh partial compliance, whether implied constraints count, how to read numeric limits, and whether correctness is part of the score.</p>
+              </div>
+            </details>
+
+            <details class="part" id="part2">
+              <summary>
+                <span class="kicker">Part 2</span>
+                <span class="part-title">Seven Examples That Split Raters</span>
+                <span class="part-desc">Seven invented requests and responses, each chosen to produce a real disagreement.</span>
+              </summary>
+              <div class="part-body">
+                <p>All material is invented. The split scores are illustrative: they show how raters <em>could</em> reasonably disagree under the vague instruction, not results from a real rating round.</p>
+                <h4 class="subhead"><span class="kicker">Example 1</span> The upper limit</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd>"Give me no more than two examples of irregular English verbs."</dd>
+                  <dt>Response</dt>
+                  <dd>"One example is <em>go</em>, whose past tense is <em>went</em>."</dd>
+                  <dt>Split</dt>
+                  <dd>5 (the limit was respected) vs. 3 (the user clearly expected two).</dd>
+                  <dt>Open question</dt>
+                  <dd>Is a numeric limit a target or a ceiling? (Scalar implicature: a bare numeral usually reads as "exactly," while "no more than" sets only an upper bound.)</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Example 2</span> Half of a two-part request</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd>"Summarize this article on city bike-sharing in three bullet points, and end with one question for discussion." [invented article, not shown]</dd>
+                  <dt>Response</dt>
+                  <dd>
+                    <ul>
+                      <li>Bike-sharing trips rose sharply after docking stations were added near train stations.</li>
+                      <li>Most trips are short and replace walks and bus rides more often than car trips.</li>
+                      <li>The program still depends on city subsidies, and the operator is testing higher fares.</li>
+                    </ul>
+                  </dd>
+                  <dt>Split</dt>
+                  <dd>4 vs. 2.</dd>
+                  <dt>Open question</dt>
+                  <dd>How much does missing one of two instructions cost? The scale gives no way to weigh parts.</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Example 3</span> Mixed register in German</h4>
+                <dl class="rows">
+                  <dt>Request (German)</dt>
+                  <dd lang="de">„Kannst du mir bitte eine kurze, förmliche E-Mail an meine Vermieterin, Frau Berger, schreiben? Die Heizung ist seit drei Tagen kaputt.“</dd>
+                  <dt>Gloss</dt>
+                  <dd class="gloss"><em>"Could you write me a short, formal email to my landlady, Ms. Berger? The heating has been broken for three days."</em></dd>
+                  <dt>Response</dt>
+                  <dd>
+                    <blockquote class="quote" lang="de">
+                      <p>Sehr geehrte Frau Berger,</p>
+                      <p>ich möchte Ihnen mitteilen, dass die Heizung in meiner Wohnung seit drei Tagen nicht funktioniert. Kannst du bitte so bald wie möglich jemanden vorbeischicken?</p>
+                      <p>Mit freundlichen Grüßen</p>
+                    </blockquote>
+                  </dd>
+                  <dt>Gloss</dt>
+                  <dd class="gloss"><em>the email opens with the formal address and formal</em> <span class="cited">Ihnen</span><em>, then switches to informal</em> <span class="cited">du</span> <em>in the request sentence.</em></dd>
+                  <dt>Split</dt>
+                  <dd>4 (one slip in an otherwise formal email) vs. 2 (the one explicit style instruction was "formal," and the landlady would notice).</dd>
+                  <dt>Open question</dt>
+                  <dd>Is a single violation of an explicit style instruction minor or major?</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Example 4</span> Letter versus spirit</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd>"Explain in one sentence why the sky is blue."</dd>
+                  <dt>Response</dt>
+                  <dd>"Sunlight contains every color, but when it passes through the atmosphere the short blue wavelengths are scattered by nitrogen and oxygen molecules far more strongly than the longer red ones—a process known as Rayleigh scattering—so blue light reaches our eyes from every part of the sky; at sunrise and sunset, by contrast, light crosses much more air, most of the blue is scattered away, and the reds and oranges that remain color the horizon."</dd>
+                  <dt>Split</dt>
+                  <dd>5 (it is one sentence) vs. 2 (it is three sentences in disguise).</dd>
+                  <dt>Open question</dt>
+                  <dd>Do we rate the literal wording or the evident purpose (brevity)?</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Example 5</span> Perfect format, wrong answer</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd>"Just the answer, no explanation: what is 15% of 80?"</dd>
+                  <dt>Response</dt>
+                  <dd>"14." (The correct answer is 12.)</dd>
+                  <dt>Split</dt>
+                  <dd>5 (the format was followed exactly) vs. 1.</dd>
+                  <dt>Open question</dt>
+                  <dd>Does "follows instructions" include being correct, or is accuracy a separate dimension?</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Example 6</span> Asking instead of doing</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd>"Write a four-line rhyming birthday poem for my grandmother."</dd>
+                  <dt>Response</dt>
+                  <dd>"I'd love to! What's her name, and what does she enjoy? That'll help me make it personal."</dd>
+                  <dt>Split</dt>
+                  <dd>1 (nothing requested was delivered) vs. 4 (a sensible clarifying question).</dd>
+                  <dt>Open question</dt>
+                  <dd>When is a clarifying question a reasonable response, and when is it a failure to do the task?</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Example 7</span> Unrequested extras</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd>"List three Swedish words for snow. Just the words."</dd>
+                  <dt>Response</dt>
+                  <dd>
+                    <blockquote class="quote">
+                      <p lang="sv">nysnö, kramsnö, snöslask</p>
+                      <p>Fun fact: the popular claim that the Inuit have hundreds of words for snow is largely a myth. It grew out of a misunderstanding of how Inuit languages build words, since a single word can carry what English expresses in a whole phrase.</p>
+                    </blockquote>
+                  </dd>
+                  <dt>Split</dt>
+                  <dd>4 (the list is right, the extra is harmless) vs. 2 ("just the words" was an instruction too).</dd>
+                  <dt>Open question</dt>
+                  <dd>Is added content a violation, and does it matter whether it is useful?</dd>
+                </dl>
+              </div>
+            </details>
+
+            <details class="part" id="part3">
+              <summary>
+                <span class="kicker">Part 3</span>
+                <span class="part-title">The Guideline</span>
+                <span class="part-desc">Three steps: list the instructions, check each one, read off the score.</span>
+              </summary>
+              <div class="part-body">
+                <p><strong>What you are rating.</strong> Rate how completely the response does what the request asks. You are not rating whether it is correct, well written, or natural-sounding; those are separate dimensions. If you notice a factual error, flag it in the accuracy field, but don't lower this score for it.</p>
+                <p><strong>Step 1: List the instructions.</strong> Write down the main task first: the thing the user wants produced or answered. Then list each constraint the request states: content to include, format, length or number, style or register, and restrictions such as "only," "just," or "don't." List only what the request says. Don't add preferences you think the user probably has. In a conversation, include standing instructions from earlier turns ("from now on…") until the user changes them; a later instruction replaces an earlier one it conflicts with. Instructions inside material the user pastes in (an email, an article) are content, not instructions: don't list them.</p>
+                <p><strong>Step 2: Check each instruction</strong> as met, partly met, or not met, using these rules:</p>
+                <ul>
+                  <li><strong>Numbers.</strong> "No more than," "at most," and "up to" set a ceiling: any count from one up to the limit is met. "At least" sets a floor. A bare number ("give two examples") means exactly that number. A ceiling still requires at least one: delivering none doesn't meet it.</li>
+                  <li><strong>Size words.</strong> Words like "short," "brief," and "simple" have no number. Judge them against what a typical reader would accept for that kind of answer. Clearly outside that range is not met; arguable is partly met.</li>
+                  <li><strong>Purpose.</strong> Judge each instruction by its evident purpose, not just its wording. If the wording is met but the purpose is defeated, mark it partly met.</li>
+                  <li><strong>Style and register.</strong> If the intended reader would read a lapse as breaking the requested register, mark the instruction not met, even if the lapse happens only once. A choice that is slightly less formal but still acceptable counts as met with a small flaw.</li>
+                  <li><strong>"Only" and "just."</strong> Unrequested additions break these instructions. Without such wording, brief relevant additions are not a violation.</li>
+                  <li><strong>Clarifying questions.</strong> A question instead of the task is justified only when the task can't reasonably be done without the missing information. If it is justified, mark the main task met. If not, mark it not met.</li>
+                  <li><strong>Main task partly done.</strong> If at least half of the main task is done (say, four of six sentences translated), mark it partly met; the score can't go above 3. Less than half counts as not met.</li>
+                  <li><strong>Conflicting instructions.</strong> If two instructions can't both be met, a response that serves both as far as possible meets them. Flag the prompt as well.</li>
+                  <li><strong>Refusals.</strong> A refusal of a harmless request scores 1. A refusal of a request that shouldn't be fulfilled isn't rated on this dimension: mark it not applicable and send it to safety review.</li>
+                </ul>
+                <p><strong>Step 3: Score</strong> the response with the rubric below.</p>
+              </div>
+            </details>
+
+            <details class="part" id="part4" open>
+              <summary>
+                <span class="kicker">Part 4</span>
+                <span class="part-title">The Rubric</span>
+                <span class="part-desc">Five score levels tied to the checklist, with the seven examples scored.</span>
+              </summary>
+              <div class="part-body">
+                <div class="table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="narrow">Score</th>
+                        <th scope="col">Meaning</th>
+                        <th scope="col">Checklist result</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>5</td>
+                        <td>Fully follows</td>
+                        <td>Every instruction met</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Follows, minor flaw</td>
+                        <td>Every instruction met, but one has a small flaw that doesn't affect its purpose (e.g. a formal German email that closes with <em>Viele Grüße</em> instead of <em>Mit freundlichen Grüßen</em>)</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Partly follows</td>
+                        <td>Main task met or partly met; at least half of the other instructions met (partly met counts as half)</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Mostly misses</td>
+                        <td>Main task met or partly met but fewer than half of the other instructions met, <strong>or</strong> main task not met but the response engages with the request</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Does not follow</td>
+                        <td>Ignores the request, does a different task, or declines a harmless request</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p>A justified refusal is marked not applicable and sent to safety review rather than scored.</p>
+                <h4 class="subhead">The Seven Examples, Scored</h4>
+                <div class="table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="num">#</th>
+                        <th scope="col">Main task</th>
+                        <th scope="col">Other instructions</th>
+                        <th scope="col" class="narrow">Score</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Met</td>
+                        <td>At most two: met (1 of 1)</td>
+                        <td>5</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Met</td>
+                        <td>Three bullets met; closing question not met (1 of 2)</td>
+                        <td>3</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Met</td>
+                        <td>Short met; formal not met (1 of 2)</td>
+                        <td>3</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Met</td>
+                        <td>One sentence: partly met (½ of 1)</td>
+                        <td>3</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Met</td>
+                        <td>Answer only: met (1 of 1)</td>
+                        <td>5 + accuracy flag</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>Not met; question not needed</td>
+                        <td>Four lines, rhyming: can't be checked</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>Met</td>
+                        <td>Three words met; "just the words" not met (1 of 2)</td>
+                        <td>3</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p>Every example gets exactly one score, and each score can be traced to a line in the checklist.</p>
+              </div>
+            </details>
+
+            <details class="part" id="part5">
+              <summary>
+                <span class="kicker">Part 5</span>
+                <span class="part-title">The Edge-Case Map</span>
+                <span class="part-desc">Eleven cases where two raters could still differ, each with a ruling.</span>
+              </summary>
+              <div class="part-body">
+                <p>Eleven cases where the guideline could still leave two raters apart, each with its ruling. All material is invented.</p>
+                <div class="table-scroll wide">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="num">#</th>
+                        <th scope="col">Case</th>
+                        <th scope="col">Example</th>
+                        <th scope="col">Ruling</th>
+                        <th scope="col" class="narrow">Score</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Numeric limits at their edges</td>
+                        <td>"No more than two examples" → none; "give two" → three; "at least three" → five</td>
+                        <td>Not met (a ceiling needs at least one); not met (a bare number means exactly); met</td>
+                        <td>2 / 2 / 5</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Vague size words</td>
+                        <td>"Give me a short explanation of inflation" → about 600 words under four headings</td>
+                        <td>Clearly outside what a reader expects for "short": not met</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Main task partly done</td>
+                        <td>"Translate these six sentences into German" → four translated</td>
+                        <td>Partly met, capped at 3</td>
+                        <td>3</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Justified clarifying question</td>
+                        <td>Translation request with no language given → asks which language</td>
+                        <td>Main task met; see Calibration D</td>
+                        <td>5</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Refusals</td>
+                        <td>Harmless limerick request → polite refusal</td>
+                        <td>Declines a harmless request; see Calibration C</td>
+                        <td>1 (a justified refusal: not applicable)</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>Contradictory instructions</td>
+                        <td>"Answer only yes or no: is a tomato a fruit? And tell me why." → "Yes. Botanically it's a fruit, because it grows from the flower and holds the seeds."</td>
+                        <td>Serves both as far as possible: met; flag the prompt</td>
+                        <td>5</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>Standing instructions</td>
+                        <td>Turn 1: "From now on, answer in bullet points." Turn 3: prose</td>
+                        <td>Standing instruction not met</td>
+                        <td>2 (if nothing else was asked)</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>Instructions in pasted material</td>
+                        <td>"Summarize this email in two sentences" → summary plus a drafted reply with availability, which the email asked for</td>
+                        <td>The email's request isn't on the checklist; the added reply breaks the two-sentence limit</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>Unstated German register</td>
+                        <td>See below</td>
+                        <td>Formality wasn't stated, so it isn't on the checklist; flag in the quality field</td>
+                        <td>5 + quality flag</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>Swedish calque</td>
+                        <td>See below</td>
+                        <td>All instructions met; naturalness is a separate dimension</td>
+                        <td>5 (3 if natural Swedish had been requested)</td>
+                      </tr>
+                      <tr>
+                        <td>11</td>
+                        <td>Rubric-writer check</td>
+                        <td>See below</td>
+                        <td>A check for people writing criteria, not for raters</td>
+                        <td>—</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h4 class="subhead"><span class="kicker">Case 9</span> German register that was never stated</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd lang="de">„Schreib mir bitte eine kurze E-Mail an meine Vermieterin, Frau Berger. Die Heizung geht seit drei Tagen nicht.“</dd>
+                  <dt>Gloss</dt>
+                  <dd class="gloss"><em>"Please write me a short email to my landlady, Ms. Berger. The heating hasn't worked for three days."</em></dd>
+                  <dt>Response</dt>
+                  <dd>
+                    <blockquote class="quote" lang="de">
+                      <p>Hallo Frau Berger,</p>
+                      <p>bei mir geht seit drei Tagen die Heizung nicht. Kannst du bitte so schnell wie möglich jemanden vorbeischicken?</p>
+                      <p>Danke dir und liebe Grüße</p>
+                    </blockquote>
+                  </dd>
+                  <dt>Gloss</dt>
+                  <dd class="gloss"><em>the email uses informal</em> <span class="cited">du</span> <em>throughout.</em></dd>
+                  <dt>Ruling</dt>
+                  <dd>"Short" is met, and formality was never requested, so every listed instruction is met: 5. The register problem is real, but it belongs in the quality field. This is the contrast to Example 3, where the request said <em>förmlich</em>. Keeping implied conventions out of this score keeps the checklist checkable.</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Case 10</span> Swedish calque</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd lang="sv">”Ge mig tre tips för att sova bättre, i punktform.”</dd>
+                  <dt>Gloss</dt>
+                  <dd class="gloss"><em>"Give me three tips for sleeping better, as a bulleted list."</em></dd>
+                  <dt>Response</dt>
+                  <dd>
+                    <blockquote class="quote">
+                      <ul>
+                        <li lang="sv">Gå och lägg dig vid samma tid varje kväll.</li>
+                        <li lang="sv">Undvik skärmar den sista timmen innan du somnar – det gör mening att låta hjärnan varva ner.</li>
+                        <li lang="sv">I slutet av dagen handlar det om att lyssna på din kropp.</li>
+                      </ul>
+                    </blockquote>
+                  </dd>
+                  <dt>Gloss</dt>
+                  <dd class="gloss"><em>"<span lang="sv">det gör mening</span>" copies English "it makes sense"; natural Swedish is "<span lang="sv">det är klokt att</span>." "<span lang="sv">I slutet av dagen</span>" copies "at the end of the day"; natural is "<span lang="sv">när allt kommer omkring</span>."</em></dd>
+                  <dt>Ruling</dt>
+                  <dd>Three tips, as a list: every instruction met, 5. Naturalness is a separate dimension and isn't part of this score. The twist: if the request had said "<span lang="sv">på naturlig svenska</span>," naturalness becomes a stated style instruction that a Swedish reader would notice. Two of three constraints met gives a 3. Whether naturalness is in scope depends on the wording of the request.</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Case 11</span> The rubric-writer check</h4>
+                <p>For people writing criteria rather than rating responses. Before a criterion is used, classify how it relates to the constraint in the request.</p>
+                <div class="table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Relationship</th>
+                        <th scope="col">Example (request says "at most two")</th>
+                        <th scope="col">Problem</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Same</td>
+                        <td>"no more than two"</td>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <td>Narrower</td>
+                        <td>"exactly two"</td>
+                        <td>Penalizes compliant responses</td>
+                      </tr>
+                      <tr>
+                        <td>Broader</td>
+                        <td>"at most four"</td>
+                        <td>Rewards non-compliant responses</td>
+                      </tr>
+                      <tr>
+                        <td>Partial overlap</td>
+                        <td>"between one and three"</td>
+                        <td>Both of the above</td>
+                      </tr>
+                      <tr>
+                        <td>No overlap</td>
+                        <td>"at least three"</td>
+                        <td>True contradiction</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+
+            <details class="part" id="part6">
+              <summary>
+                <span class="kicker">Part 6</span>
+                <span class="part-title">Calibration Examples</span>
+                <span class="part-desc">Four worked examples with the checklist, the score, and the likely wrong scores.</span>
+              </summary>
+              <div class="part-body">
+                <p>Four fully worked examples, one for each score the seven examples don't reach (score 3 is covered by examples 2, 3, 4 and 7). Each shows the checklist, the score, and the scores raters are most likely to give by mistake. All material is invented.</p>
+                <h4 class="subhead"><span class="kicker">Calibration A</span> A formal email with a softer closing (score 4)</h4>
+                <dl class="rows">
+                  <dt>Request (German)</dt>
+                  <dd lang="de">„Kannst du mir bitte eine kurze, förmliche E-Mail an meine Vermieterin, Frau Berger, schreiben? Die Heizung ist seit drei Tagen kaputt.“</dd>
+                  <dt>Response</dt>
+                  <dd>
+                    <blockquote class="quote" lang="de">
+                      <p>Sehr geehrte Frau Berger,</p>
+                      <p>leider funktioniert die Heizung in meiner Wohnung seit drei Tagen nicht mehr. Könnten Sie bitte so bald wie möglich einen Handwerker vorbeischicken?</p>
+                      <p>Vielen Dank im Voraus.</p>
+                      <p>Viele Grüße</p>
+                    </blockquote>
+                  </dd>
+                  <dt>Gloss</dt>
+                  <dd class="gloss"><em>formal throughout, with</em> <span class="cited">Sie</span> <em>and a formal opening, but it closes with the semi-formal</em> <span class="cited">Viele Grüße</span> <em>rather than</em> <span class="cited">Mit freundlichen Grüßen</span><em>.</em></dd>
+                  <dt>Checklist</dt>
+                  <dd>Main task met. Short: met. Formal: met, with a small flaw.</dd>
+                  <dt>Score</dt>
+                  <dd><span class="chip">4</span></dd>
+                  <dt>Why not 5</dt>
+                  <dd>The email sets a fully formal tone, and the closing drops a notch below it.</dd>
+                  <dt>Why not 3</dt>
+                  <dd>Frau Berger wouldn't read <em>Viele Grüße</em> as informal, because it's common in professional email. The purpose of "formal" (a polite, businesslike request) is intact. Compare Example 3, where <em>du</em> breaks the register the landlady was promised, and it scores 3.</dd>
+                  <dt>What it teaches</dt>
+                  <dd>The line between a small flaw and "not met" for style instructions. This example exposed a gap in the first wording of the style rule.</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Calibration B</span> A good answer that ignores its only constraint (score 2)</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd>"Describe the plot of <em>Romeo and Juliet</em> in one sentence."</dd>
+                  <dt>Response</dt>
+                  <dd>
+                    <blockquote class="quote">
+                      <p>Romeo and Juliet are two teenagers from feuding families in Verona who meet at a party and fall in love at first sight. They marry in secret with the help of Friar Laurence.</p>
+                      <p>Soon after, Romeo kills Juliet's cousin Tybalt in a street fight and is banished. To escape an arranged marriage, Juliet takes a potion that makes her appear dead.</p>
+                      <p>Romeo never gets the message explaining the plan. Believing she is dead, he poisons himself at her tomb, and when Juliet wakes and finds him, she stabs herself. Their deaths finally reconcile the two families.</p>
+                    </blockquote>
+                  </dd>
+                  <dt>Checklist</dt>
+                  <dd>Main task met. One sentence: not met (0 of 1).</dd>
+                  <dt>Score</dt>
+                  <dd><span class="chip">2</span></dd>
+                  <dt>Why raters give 3</dt>
+                  <dd>The summary is accurate and well written. But quality isn't what this score measures. The one thing the user asked for beyond the task was ignored.</dd>
+                  <dt>Why not 3 like Example 4</dt>
+                  <dd>Example 4 was one long sentence that met the wording but stretched the purpose, so it was partly met. This response is three paragraphs, so it's not met at all.</dd>
+                  <dt>Why not 1</dt>
+                  <dd>It does the requested task.</dd>
+                  <dt>What it teaches</dt>
+                  <dd>When a request has only one constraint, ignoring it scores 2, however good the answer is.</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Calibration C</span> A polite refusal of a harmless request (score 1)</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd>"Write a limerick about my cat, Pixel, who keeps knocking things off the table."</dd>
+                  <dt>Response</dt>
+                  <dd>"I'm sorry, but I can't write content about specific animals. Is there something else I can help you with?"</dd>
+                  <dt>Checklist</dt>
+                  <dd>Main task not met. The response declines a harmless request.</dd>
+                  <dt>Score</dt>
+                  <dd><span class="chip">1</span></dd>
+                  <dt>Why not 2</dt>
+                  <dd>A 2 needs a response that engages with the request. Offering help with <em>something else</em> isn't engaging with <em>this</em> request.</dd>
+                  <dt>Why not "not applicable"</dt>
+                  <dd>That's only for requests that shouldn't be fulfilled. A limerick about a cat is harmless. The rater judges the request, not how cautious the response sounds.</dd>
+                  <dt>What it teaches</dt>
+                  <dd>A refusal's polite tone doesn't change its score.</dd>
+                </dl>
+                <h4 class="subhead"><span class="kicker">Calibration D</span> A question instead of the task (score 5)</h4>
+                <dl class="rows">
+                  <dt>Request</dt>
+                  <dd>"Translate this into the language my grandmother speaks: 'Happy birthday, I miss you.'" (Nothing earlier in the conversation names the language.)</dd>
+                  <dt>Response</dt>
+                  <dd>"Happy to! Which language does your grandmother speak?"</dd>
+                  <dt>Checklist</dt>
+                  <dd>Main task met, because the question is justified. There are no other instructions.</dd>
+                  <dt>Score</dt>
+                  <dd><span class="chip">5</span></dd>
+                  <dt>Why raters give 2</dt>
+                  <dd>It looks like Example 6, the birthday poem, which scored 2.</dd>
+                  <dt>The difference</dt>
+                  <dd>The poem could have been written without the grandmother's name. This translation can't be done at all without the language. The test is whether a reasonable response could do the task without the answer.</dd>
+                  <dt>The twist</dt>
+                  <dd>If the user had said earlier that the grandmother grew up in Sweden, the question wouldn't be justified, and the score would drop to 2.</dd>
+                  <dt>What it teaches</dt>
+                  <dd>The clarifying-question rule, and why it looks at the whole conversation.</dd>
+                </dl>
+                <h4 class="subhead">Coverage</h4>
+                <div class="table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="narrow">Score</th>
+                        <th scope="col">Where it is shown</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>5</td>
+                        <td>Examples 1 and 5; Calibration D</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Calibration A</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Examples 2, 3, 4 and 7</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Example 6; Calibration B</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Calibration C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <section id="result" class="prose">
+          <h2>The Result</h2>
+          <p>Every example and calibration case now gets exactly one score, and each score traces back to a line in the checklist. Every score from 1 to 5 has at least one worked example. I haven't yet tested the guideline with independent raters.</p>
+          <dl class="rows skills">
+            <dt>Skills shown</dt>
+            <dd>Guideline writing, rubric design, edge-case analysis, rater calibration, multilingual evaluation (German, Swedish).</dd>
+          </dl>
+        </section>
+
+        <div class="next">
+          <a class="text-link" href="../test-items/test-items-case-study.html">Next: Writing Test Items With Exactly One Defensible Answer &rarr;</a>
+          <a class="text-link" href="../work-overview.html">All work</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-intro">
+          <div class="label">Contact</div>
+          <h2>Let&rsquo;s talk</h2>
+          <p>I&rsquo;m open to roles in AI evaluation, language quality, and assessment. Remote, from California.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="mailto:stfnhbr@gmail.com">stfnhbr@gmail.com <span>Email</span></a></li>
+          <li><a href="https://www.linkedin.com/in/stefan-huber-phd-29161b35/">LinkedIn profile <span>LinkedIn</span></a></li>
+          <li><a href="../../resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute; <span>PDF</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stefan Huber</div>
+        <div>Built by hand in HTML and CSS, with AI assistance.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
