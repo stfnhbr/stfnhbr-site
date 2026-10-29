@@ -1,0 +1,21 @@
+# Stefan Huber
+
+> Stefan Huber, Ph.D., is a linguist working in AI evaluation, based in Roseville, California, and working remotely. He writes guidelines and rubrics, designs test items, transcribes and judges speech in German, Swedish, and English (including dialect), audits reviewers' work, and builds small tools for reviewers. He is open to roles in AI evaluation, language quality, and assessment.
+
+Background: Ph.D. in Linguistics, Lund University (2002); 16 years teaching German, linguistics, and Swedish at the University of South Florida (Professor of Instruction from 2018); AI evaluation since 2023, including Language Auditor Lead (German) on multilingual model evaluation and freelance reviewer and auditor work on annotation and model-evaluation projects. Languages: German (native), Swedish (near-native), English (native-level). All work samples on this site use public or invented material.
+
+## Case studies
+
+- [From Vague Guideline to Consistent Rubric](https://stfnhbr.online/work/rubric/rubric-case-study.html): one line of rating guidance turned into a guideline, a scored rubric, an edge-case map, and calibration examples.
+- [Writing Test Items With Exactly One Defensible Answer](https://stfnhbr.online/work/test-items/test-items-case-study.html): two sample test items with an explanation for every answer choice, and the method behind a ten-book series of 330 published Digital SAT items.
+- [Transcribing Dialect Speech as It Is Actually Spoken](https://stfnhbr.online/work/dialect-audio/dialect-audio-case-study.html): four recordings in Upper Swabian, Standard German, and English, with a verbatim, annotated dialect transcript.
+- [Crosstalk](https://stfnhbr.online/work/crosstalk/crosstalk-case-study.html): his own desktop tool for reviewing who speaks when in recorded conversations (case study coming soon).
+
+## About and contact
+
+- [About](https://stfnhbr.online/about/about.html): background, education, and career path.
+- [All work](https://stfnhbr.online/work/work-overview.html): overview of the work samples.
+- [Résumé (PDF)](https://stfnhbr.online/resume.pdf)
+- Email: stfnhbr@gmail.com
+- [LinkedIn](https://www.linkedin.com/in/stefan-huber-phd-29161b35/)
+- [GitHub](https://github.com/stfnhbr)
